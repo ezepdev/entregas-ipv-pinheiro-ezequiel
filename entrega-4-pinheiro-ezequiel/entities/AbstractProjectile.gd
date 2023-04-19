@@ -17,7 +17,7 @@ func set_starting_values(starting_position:Vector2,direction: Vector2):
 	set_physics_process(true);
 
 func _physics_process(delta):
-	position += direction * 50 * delta
+	position += direction * speed * delta
 
 
 func _on_Timer_timeout():

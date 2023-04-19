@@ -2,7 +2,7 @@ extends Sprite
 onready var cannon:Sprite = $Cannon
 export var speed = 300;
 
-var projectile_container: Node
+var projectile_container
 
 func set_projectile_container(container:Node):
 	cannon.projectile_container = container;

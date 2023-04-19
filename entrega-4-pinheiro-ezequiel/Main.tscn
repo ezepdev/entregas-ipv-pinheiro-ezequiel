@@ -24,6 +24,7 @@ expand = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 512, 300 )
+speed = 500
 
 [node name="Turret" parent="." instance=ExtResource( 5 )]
 position = Vector2( 243, 153 )

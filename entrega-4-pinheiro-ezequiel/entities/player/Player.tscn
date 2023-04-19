@@ -9,6 +9,7 @@
 [node name="Player" type="Sprite"]
 texture = ExtResource( 5 )
 script = ExtResource( 2 )
+speed = 299
 
 [node name="Cannon" type="Sprite" parent="."]
 texture = ExtResource( 4 )
