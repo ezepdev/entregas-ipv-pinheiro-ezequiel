@@ -1,4 +1,4 @@
-extends Sprite
+extends StaticBody2D
 class_name Projectile
 
 signal delete_requested(projectile);
@@ -19,6 +19,9 @@ func set_starting_values(starting_position:Vector2,direction: Vector2):
 func _physics_process(delta):
 	position += direction * speed * delta
 
-
 func _on_Timer_timeout():
 	emit_signal("delete_requested",self)
+
+
+func _on_CollisionArea_body_entered(body):
+	body.queue_free() # Replace with function body.

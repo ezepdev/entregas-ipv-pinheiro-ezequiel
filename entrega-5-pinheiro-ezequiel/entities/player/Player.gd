@@ -1,11 +1,13 @@
 extends KinematicBody2D
 onready var cannon:Sprite = $Cannon
+
+class_name Player
 export var speed = 300;
-export (float) var FRICTION_WEIGHT:float = 0.1;
-export (float) var ACCELERATION:float = 20.0;
+export (float) var FRICTION_WEIGHT:float = 0.2;
+export (float) var ACCELERATION:float = 30.0;
 export (float) var HORIZONTAL_SPEED_LIMIT:float = 600;
-export (float) var JUMP_SPEED:float = -500;
-export (float) var GRAVITY:float = 10;
+export (float) var JUMP_SPEED:float = -300;
+export (float) var GRAVITY:float = 300;
 
 var projectile_container
 var velocity:Vector2 = Vector2.ZERO
@@ -30,9 +32,11 @@ func _handle_inputs():
 		velocity.x = lerp(velocity.x,0,FRICTION_WEIGHT) if abs(velocity.x) > 1 else 0
 	
 	if (Input.is_action_just_pressed("jump")):
-		velocity.y = JUMP_SPEED
+		if (is_on_floor()):
+			velocity.y = JUMP_SPEED
 
 func _physics_process(delta):
 	_handle_inputs();
-	velocity.y += GRAVITY;
+	if (!is_on_floor()):
+		velocity.y += GRAVITY * delta;
 	move_and_slide(velocity,Vector2.UP)

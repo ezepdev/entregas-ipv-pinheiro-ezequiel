@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/textures/player.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31.5, 31.5 )
+extents = Vector2( 31.5, 63.5 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 4 )
@@ -23,14 +23,14 @@ texture = ExtResource( 3 )
 expand = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 512, 300 )
+position = Vector2( 580, 298 )
 speed = 500
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
 
 [node name="Turret" parent="." instance=ExtResource( 5 )]
-position = Vector2( 243, 153 )
+position = Vector2( 60, 142 )
 
 [node name="Floor" parent="." instance=ExtResource( 2 )]
 
@@ -41,6 +41,7 @@ position = Vector2( 1519, 466 )
 position = Vector2( 2541, 466 )
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
+visible = false
 position = Vector2( 150, 150 )
 
 [node name="Sprite" type="Sprite" parent="RigidBody2D"]
@@ -48,4 +49,15 @@ texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2( 0.5, -0.5 )
+shape = SubResource( 1 )
+
+[node name="Wall" type="StaticBody2D" parent="."]
+position = Vector2( 225, 267 )
+
+[node name="Sprite" type="Sprite" parent="Wall"]
+scale = Vector2( 1, 2 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2( 0, 0.5 )
 shape = SubResource( 1 )
