@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/textures/tileset/Mossy - TileSet.png" type="Texture" id=1]
+
+[node name="Ramp" type="StaticBody2D"]
+position = Vector2( 3, -128 )
+rotation = 1.56769
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( 25.0845, -81.7856 )
+scale = Vector2( 0.436683, 0.544578 )
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 16.2162, 8.10809, 16.2162, 240.541, 262.162, 16.2162, 251.351, 27.027 )
+uv = PoolVector2Array( 16.2162, 8.10809, 16.2162, 240.541, 262.162, 16.2162, 251.351, 27.027 )
+internal_vertex_count = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 52.9128, 28.1645 )
+rotation = -0.870438
+polygon = PoolVector2Array( -26.1236, -1.5988, 65.6009, -83.6452, 128, 0 )

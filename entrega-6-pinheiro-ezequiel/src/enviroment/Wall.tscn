@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/textures/tileset/Mossy - TileSet.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 296 )
+
+[node name="Wall" type="StaticBody2D"]
+
+[node name="gray_square" type="Sprite" parent="."]
+position = Vector2( -0.775308, -0.999985 )
+scale = Vector2( 0.662127, 11.6078 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 393.974, 45.453, 108.083, 51.9892 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )

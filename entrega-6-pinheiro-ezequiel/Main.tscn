@@ -1,0 +1,226 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://src/entities/player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/textures/background/Layer_0002_7.png" type="Texture" id=2]
+[ext_resource path="res://Main.gd" type="Script" id=3]
+[ext_resource path="res://src/entities/enemies/Turret.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/entities/enemies/TurretsSpawner.gd" type="Script" id=5]
+[ext_resource path="res://src/enviroment/Platform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/enviroment/Ramp.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/enviroment/Trophy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/enviroment/Obstacle.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/enviroment/Floor.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/enviroment/Wall.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/textures/background/Layer_0000_9.png" type="Texture" id=12]
+[ext_resource path="res://assets/textures/background/Layer_0004_Lights.png" type="Texture" id=13]
+[ext_resource path="res://assets/textures/background/Layer_0005_5.png" type="Texture" id=14]
+[ext_resource path="res://assets/textures/background/Layer_0001_8.png" type="Texture" id=15]
+[ext_resource path="res://assets/textures/background/Layer_0010_1.png" type="Texture" id=17]
+[ext_resource path="res://assets/textures/background/Layer_0008_3.png" type="Texture" id=18]
+[ext_resource path="res://assets/textures/background/Layer_0003_6.png" type="Texture" id=19]
+[ext_resource path="res://assets/textures/background/Layer_0009_2.png" type="Texture" id=20]
+[ext_resource path="res://assets/textures/background/Layer_0007_Lights.png" type="Texture" id=21]
+
+[node name="Main" type="Node"]
+script = ExtResource( 3 )
+
+[node name="Background" type="ParallaxBackground" parent="."]
+scale = Vector2( 3, 3 )
+transform = Transform2D( 3, 0, 0, 3, 0, 0 )
+follow_viewport_enable = true
+follow_viewport_scale = 0.8
+scroll_base_offset = Vector2( -100, 0 )
+scroll_base_scale = Vector2( 0.3, 0 )
+scroll_limit_end = Vector2( -50, 0 )
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Background"]
+
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 12 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Background"]
+z_index = -200
+
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer2"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 15 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2( 0.9, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer3"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Background"]
+z_as_relative = false
+motion_scale = Vector2( 0.9, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer4"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 19 )
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="Background"]
+z_index = -450
+z_as_relative = false
+motion_scale = Vector2( 0.6, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer5"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 13 )
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="Background"]
+z_index = -500
+z_as_relative = false
+motion_scale = Vector2( 0.8, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer6"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 14 )
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="Background"]
+z_as_relative = false
+motion_scale = Vector2( 0.7, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer7"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 21 )
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="Background"]
+position = Vector2( 0.333333, -459.25 )
+z_index = -700
+z_as_relative = false
+
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer8"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 18 )
+
+[node name="ParallaxLayer9" type="ParallaxLayer" parent="Background"]
+position = Vector2( 0.333333, -459.25 )
+z_index = -900
+z_as_relative = false
+
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer9"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ParallaxLayer10" type="ParallaxLayer" parent="Background"]
+position = Vector2( 0.333333, -459.25 )
+z_index = -1000
+z_as_relative = false
+
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer10"]
+margin_right = 935.0
+margin_bottom = 1014.0
+rect_scale = Vector2( 1, 0.780485 )
+texture = ExtResource( 17 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Environment" type="Node2D" parent="."]
+position = Vector2( 123, 63 )
+
+[node name="Ground" type="Node2D" parent="Environment"]
+
+[node name="Floor" parent="Environment/Ground" instance=ExtResource( 10 )]
+position = Vector2( 1424.51, 565.622 )
+scale = Vector2( 1.29663, 1.58942 )
+
+[node name="Floor2" parent="Environment/Ground" instance=ExtResource( 10 )]
+position = Vector2( 611, 567 )
+scale = Vector2( 1.4319, 1.6729 )
+
+[node name="Floor3" parent="Environment/Ground" instance=ExtResource( 10 )]
+position = Vector2( 53, 568 )
+
+[node name="Wall" parent="Environment/Ground" instance=ExtResource( 11 )]
+position = Vector2( 31.8359, 298.952 )
+
+[node name="Ramp" parent="Environment/Ground" instance=ExtResource( 7 )]
+position = Vector2( 1157, 478 )
+rotation = 0.83694
+scale = Vector2( 2.10494, 2.01971 )
+z_index = -100
+
+[node name="Ramp2" parent="Environment/Ground" instance=ExtResource( 7 )]
+position = Vector2( 158, 485 )
+rotation = 0.88436
+scale = Vector2( 0.92084, 1 )
+
+[node name="Ramp3" parent="Environment/Ground" instance=ExtResource( 7 )]
+position = Vector2( 436, 462 )
+rotation = 0.889736
+
+[node name="Platform" parent="Environment/Ground" instance=ExtResource( 6 )]
+position = Vector2( 1472.51, 221.622 )
+
+[node name="Platform2" parent="Environment/Ground" instance=ExtResource( 6 )]
+position = Vector2( 1728.51, 261.622 )
+
+[node name="Platform3" parent="Environment/Ground" instance=ExtResource( 6 )]
+position = Vector2( 1584.51, 413.622 )
+
+[node name="Platform4" parent="Environment/Ground" instance=ExtResource( 6 )]
+position = Vector2( 424, 457 )
+
+[node name="Platform5" parent="Environment/Ground" instance=ExtResource( 6 )]
+position = Vector2( 586, 455 )
+
+[node name="Entities" type="Node2D" parent="Environment"]
+position = Vector2( 0, 2 )
+
+[node name="Player" parent="Environment/Entities" instance=ExtResource( 1 )]
+position = Vector2( 152.506, 477.622 )
+ACCELERATION = 30.0
+H_SPEED_LIMIT = 400.0
+jump_speed = 450
+FRICTION_WEIGHT = 0.2
+
+[node name="Camera" type="Camera2D" parent="Environment/Entities/Player"]
+current = true
+
+[node name="TurretsSpawner" type="Position2D" parent="Environment/Entities"]
+position = Vector2( 1269.72, 24.3184 )
+script = ExtResource( 5 )
+turret_scene = ExtResource( 4 )
+extents = Vector2( 300, -350 )
+
+[node name="Turret" parent="Environment/Entities/TurretsSpawner" instance=ExtResource( 4 )]
+position = Vector2( 338.423, 473.544 )
+
+[node name="Obstacles" type="Node2D" parent="Environment/Entities"]
+
+[node name="Obstacle" parent="Environment/Entities/Obstacles" instance=ExtResource( 9 )]
+position = Vector2( 1496.68, 186.419 )
+
+[node name="Obstacle2" parent="Environment/Entities/Obstacles" instance=ExtResource( 9 )]
+position = Vector2( 485.687, 442.792 )
+
+[node name="Obstacle3" parent="Environment/Entities/Obstacles" instance=ExtResource( 9 )]
+position = Vector2( 485.266, 399.065 )
+mass = 20.0
+
+[node name="Obstacle4" parent="Environment/Entities/Obstacles" instance=ExtResource( 9 )]
+position = Vector2( 515.538, 442.371 )
+
+[node name="Obstacle5" parent="Environment/Entities/Obstacles" instance=ExtResource( 9 )]
+position = Vector2( 516.379, 398.224 )
+
+[node name="Trophy" parent="Environment/Entities" instance=ExtResource( 8 )]
+position = Vector2( 1464.51, 5.62158 )
