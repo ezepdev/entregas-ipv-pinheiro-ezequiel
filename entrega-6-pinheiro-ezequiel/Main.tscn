@@ -25,174 +25,168 @@
 script = ExtResource( 3 )
 
 [node name="Background" type="ParallaxBackground" parent="."]
-scale = Vector2( 3, 3 )
-transform = Transform2D( 3, 0, 0, 3, 0, 0 )
-follow_viewport_enable = true
-follow_viewport_scale = 0.8
-scroll_base_offset = Vector2( -100, 0 )
-scroll_base_scale = Vector2( 0.3, 0 )
-scroll_limit_end = Vector2( -50, 0 )
-scroll_ignore_camera_zoom = true
+layer = -1
+offset = Vector2( 0, -200 )
+transform = Transform2D( 1, 0, 0, 1, 0, -200 )
+scroll_base_scale = Vector2( -1, 1 )
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Background"]
+[node name="ParallaxLayer10" type="ParallaxLayer" parent="Background"]
+position = Vector2( 0.333333, -459.25 )
+motion_mirroring = Vector2( 927, 793 )
 
-[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 12 )
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer10"]
+margin_right = 928.0
+margin_bottom = 793.0
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="Background"]
-z_index = -200
+[node name="ParallaxLayer9" type="ParallaxLayer" parent="Background"]
+motion_mirroring = Vector2( 927, 0 )
 
-[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer2"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 15 )
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer9"]
+margin_right = 928.0
+margin_bottom = 793.0
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="Background"]
-motion_scale = Vector2( 0.9, 1 )
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="Background"]
+motion_mirroring = Vector2( 927, 0 )
 
-[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer3"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 2 )
-
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="Background"]
-z_as_relative = false
-motion_scale = Vector2( 0.9, 1 )
-
-[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer4"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 19 )
-
-[node name="ParallaxLayer5" type="ParallaxLayer" parent="Background"]
-z_index = -450
-z_as_relative = false
-motion_scale = Vector2( 0.6, 1 )
-
-[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer5"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 13 )
-
-[node name="ParallaxLayer6" type="ParallaxLayer" parent="Background"]
-z_index = -500
-z_as_relative = false
-motion_scale = Vector2( 0.8, 1 )
-
-[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer6"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 14 )
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer8"]
+margin_right = 928.0
+margin_bottom = 793.0
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="ParallaxLayer7" type="ParallaxLayer" parent="Background"]
-z_as_relative = false
 motion_scale = Vector2( 0.7, 1 )
+motion_mirroring = Vector2( 927, 0 )
 
 [node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer7"]
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 21 )
 
-[node name="ParallaxLayer8" type="ParallaxLayer" parent="Background"]
-position = Vector2( 0.333333, -459.25 )
-z_index = -700
-z_as_relative = false
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2( 0.8, 1 )
+motion_mirroring = Vector2( 927, 0 )
 
-[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer8"]
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer6"]
 margin_right = 40.0
 margin_bottom = 40.0
-texture = ExtResource( 18 )
+texture = ExtResource( 14 )
 
-[node name="ParallaxLayer9" type="ParallaxLayer" parent="Background"]
-position = Vector2( 0.333333, -459.25 )
-z_index = -900
-z_as_relative = false
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 927, 0 )
 
-[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer9"]
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer5"]
 margin_right = 40.0
 margin_bottom = 40.0
-texture = ExtResource( 20 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+texture = ExtResource( 13 )
 
-[node name="ParallaxLayer10" type="ParallaxLayer" parent="Background"]
-position = Vector2( 0.333333, -459.25 )
-z_index = -1000
-z_as_relative = false
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2( 0.9, 1 )
+motion_mirroring = Vector2( 927, 0 )
 
-[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer10"]
-margin_right = 935.0
-margin_bottom = 1014.0
-rect_scale = Vector2( 1, 0.780485 )
-texture = ExtResource( 17 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": true
-}
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer4"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 19 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2( 0.9, 1 )
+motion_mirroring = Vector2( 927, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer3"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Background"]
+motion_mirroring = Vector2( 927, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer2"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 15 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Background"]
+motion_mirroring = Vector2( 927, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 12 )
 
 [node name="Environment" type="Node2D" parent="."]
-position = Vector2( 123, 63 )
+position = Vector2( 5, -96 )
 
 [node name="Ground" type="Node2D" parent="Environment"]
 
 [node name="Floor" parent="Environment/Ground" instance=ExtResource( 10 )]
-position = Vector2( 1424.51, 565.622 )
-scale = Vector2( 1.29663, 1.58942 )
+position = Vector2( 336, 651 )
+scale = Vector2( 1.05301, 1.41718 )
 
 [node name="Floor2" parent="Environment/Ground" instance=ExtResource( 10 )]
-position = Vector2( 611, 567 )
-scale = Vector2( 1.4319, 1.6729 )
+position = Vector2( 827, 652 )
+scale = Vector2( 1.05301, 1.41718 )
 
 [node name="Floor3" parent="Environment/Ground" instance=ExtResource( 10 )]
-position = Vector2( 53, 568 )
+position = Vector2( 1315, 652 )
+scale = Vector2( 1.05301, 1.41718 )
+
+[node name="Floor4" parent="Environment/Ground" instance=ExtResource( 10 )]
+position = Vector2( 1801, 653 )
+scale = Vector2( 1.05301, 1.41718 )
 
 [node name="Wall" parent="Environment/Ground" instance=ExtResource( 11 )]
-position = Vector2( 31.8359, 298.952 )
+position = Vector2( 80, -8 )
+z_index = -1
 
 [node name="Ramp" parent="Environment/Ground" instance=ExtResource( 7 )]
-position = Vector2( 1157, 478 )
+position = Vector2( 502, 554 )
 rotation = 0.83694
-scale = Vector2( 2.10494, 2.01971 )
+scale = Vector2( 2.89007, 3.70753 )
 z_index = -100
 
-[node name="Ramp2" parent="Environment/Ground" instance=ExtResource( 7 )]
-position = Vector2( 158, 485 )
-rotation = 0.88436
-scale = Vector2( 0.92084, 1 )
-
 [node name="Ramp3" parent="Environment/Ground" instance=ExtResource( 7 )]
-position = Vector2( 436, 462 )
-rotation = 0.889736
+position = Vector2( 886, 475 )
+rotation = 0.856297
+scale = Vector2( 2.74883, 2.66084 )
+z_index = -3
 
 [node name="Platform" parent="Environment/Ground" instance=ExtResource( 6 )]
 position = Vector2( 1472.51, 221.622 )
-
-[node name="Platform2" parent="Environment/Ground" instance=ExtResource( 6 )]
-position = Vector2( 1728.51, 261.622 )
 
 [node name="Platform3" parent="Environment/Ground" instance=ExtResource( 6 )]
 position = Vector2( 1584.51, 413.622 )
 
 [node name="Platform4" parent="Environment/Ground" instance=ExtResource( 6 )]
-position = Vector2( 424, 457 )
+position = Vector2( 858, 349 )
 
 [node name="Platform5" parent="Environment/Ground" instance=ExtResource( 6 )]
-position = Vector2( 586, 455 )
+position = Vector2( 1079, 286 )
+scale = Vector2( 0.56, 1 )
 
 [node name="Entities" type="Node2D" parent="Environment"]
 position = Vector2( 0, 2 )
 
 [node name="Player" parent="Environment/Entities" instance=ExtResource( 1 )]
-position = Vector2( 152.506, 477.622 )
+position = Vector2( 368, 571 )
 ACCELERATION = 30.0
 H_SPEED_LIMIT = 400.0
 jump_speed = 450
 FRICTION_WEIGHT = 0.2
 
 [node name="Camera" type="Camera2D" parent="Environment/Entities/Player"]
+position = Vector2( 260, -122 )
 current = true
 
 [node name="TurretsSpawner" type="Position2D" parent="Environment/Entities"]
@@ -202,7 +196,7 @@ turret_scene = ExtResource( 4 )
 extents = Vector2( 300, -350 )
 
 [node name="Turret" parent="Environment/Entities/TurretsSpawner" instance=ExtResource( 4 )]
-position = Vector2( 338.423, 473.544 )
+position = Vector2( 307.28, 471.682 )
 
 [node name="Obstacles" type="Node2D" parent="Environment/Entities"]
 
@@ -210,17 +204,17 @@ position = Vector2( 338.423, 473.544 )
 position = Vector2( 1496.68, 186.419 )
 
 [node name="Obstacle2" parent="Environment/Entities/Obstacles" instance=ExtResource( 9 )]
-position = Vector2( 485.687, 442.792 )
+position = Vector2( 910, 517 )
 
 [node name="Obstacle3" parent="Environment/Entities/Obstacles" instance=ExtResource( 9 )]
-position = Vector2( 485.266, 399.065 )
+position = Vector2( 931, 448 )
 mass = 20.0
 
 [node name="Obstacle4" parent="Environment/Entities/Obstacles" instance=ExtResource( 9 )]
-position = Vector2( 515.538, 442.371 )
+position = Vector2( 982, 466 )
 
 [node name="Obstacle5" parent="Environment/Entities/Obstacles" instance=ExtResource( 9 )]
-position = Vector2( 516.379, 398.224 )
+position = Vector2( 872, 464 )
 
 [node name="Trophy" parent="Environment/Entities" instance=ExtResource( 8 )]
 position = Vector2( 1464.51, 5.62158 )

@@ -41,17 +41,22 @@ func _process_input() -> void:
 	# Jump Action
 	var jump = Input.is_action_just_pressed('jump')
 	if jump and is_on_floor():
-		velocity.y -= jump_speed
+		_play_animation("Jump")
+		snap_vector = Vector2.DOWN
+		velocity.y = -jump_speed
+		
 
 	#horizontal speed
 	var h_movement_direction:int = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
 	if h_movement_direction != 0:
-		_play_animation("Walk")
+		if (is_on_floor() and !jump):
+			_play_animation("Walk")
 		velocity.x = clamp(velocity.x + (h_movement_direction * ACCELERATION), -H_SPEED_LIMIT, H_SPEED_LIMIT)
 		body.flip_h = h_movement_direction < 0
 		
 	else:
-		_play_animation("Idle")
+		if (is_on_floor() and !jump):
+			_play_animation("Idle")
 		velocity.x = lerp(velocity.x, 0, FRICTION_WEIGHT) if abs(velocity.x) > 1 else 0
 	
 	var mouse_position:Vector2 = get_global_mouse_position()
@@ -67,12 +72,14 @@ func _physics_process(delta) -> void:
 	velocity = move_and_slide_with_snap(velocity, snap_vector, FLOOR_NORMAL, true, 4, SLOPE_THRESHOLD)
 
 func notify_hit() -> void:
-	print("I'm player and imma die")
 	call_deferred("_remove")
 
 
 func _remove() -> void:
-	set_physics_process(false)
-	hide()
+	_play_animation("Died")
 	collision_layer = 0
+	set_physics_process(false)
 
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if (anim_name=="Died"):
+		hide()

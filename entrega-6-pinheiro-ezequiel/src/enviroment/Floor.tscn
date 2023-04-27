@@ -3,17 +3,19 @@
 [ext_resource path="res://assets/textures/tileset/Mossy - TileSet.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 328, 32 )
+extents = Vector2( 240, 48 )
 
 [node name="Floor" type="StaticBody2D"]
+scale = Vector2( 0.800391, 0.578873 )
 
 [node name="floor" type="Sprite" parent="."]
-position = Vector2( 279, -2.6226e-06 )
-scale = Vector2( 1.81768, 0.533333 )
+position = Vector2( 56, 14.5 )
+scale = Vector2( 1.58333, 1.58889 )
+z_index = -1
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 10.25, 10, 362, 120 )
+region_rect = Rect2( 560, 520, 300, 70 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 280, 0 )
+position = Vector2( 56, 24 )
 shape = SubResource( 1 )
